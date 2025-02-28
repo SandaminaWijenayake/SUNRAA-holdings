@@ -1,19 +1,24 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
+import { Aboutus } from "./Components/Aboutus";
+import { Contactus } from "./Components/Contactus";
+import { Home } from "./Components/Home";
+import { Route, Routes } from "react-router";
+import Layout from "./Components/Layout";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        {" "}
-        <div className="flex justify-center items-center h-screen bg-gray-100">
-          <h1 className="text-3xl font-bold text-blue-600">Hello, Tailwind!</h1>
-        </div>
-      </div>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact_us" element={<Contactus />} />
+          <Route path="/about_us" element={<Aboutus />} />
+        </Route>
+      </Routes>
     </>
   );
 }
