@@ -1,25 +1,59 @@
+import { NavLink } from "react-router";
+import MenuIcon from "@mui/icons-material/Menu";
+
 export default function Navbar() {
   return (
-    <div className="w-full">
-      <div className=" w-8/12 m-auto   py-4  flex justify-between items-center">
-        <div className="text-lg font-bold">Logo</div>
-        <ul className="flex space-x-6 text-black font-medium">
-          <li className="text-red-500">Home</li>
+    <nav className="w-full px-[20px] pt-[20px] pb-[15px] fixed top-0 z-10 bg-black/95">
+      <div className=" max-w-[1290px] h-[46px] m-auto font-robotoSlab font-normal text-[15px]  flex justify-between items-center">
+        <div className="text-lg font-bold text-white">Logo</div>
+        <div className="md:flex space-x-6  group  hidden [&>*:hover]:text-[#ffd900]">
+          <NavLink
+            className={({ isActive }) =>
+              `py-[13px] px-[20px] rounded-lg transition duration-300 ${
+                isActive ? "text-[#ffd900b1] font-bold" : "text-white"
+              }`
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `py-[13px] px-[20px] rounded-lg transition duration-300 ${
+                isActive ? "text-[#ffd900b1] font-bold" : "text-white"
+              }`
+            }
+            to="/Health_Benefits"
+          >
+            {" "}
+            Health Benefits
+          </NavLink>
 
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-        <div className="flex items-center space-x-4">
-          <button className="text-black">Login</button>
-          <span>|</span>
-          <button className="text-black">Register</button>
-          <div className="relative">
-            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-              3
-            </span>
-          </div>
+          <NavLink
+            className={({ isActive }) =>
+              `py-[13px] px-[20px] rounded-lg transition duration-300 ${
+                isActive ? "text-[#ffd900b1] font-bold" : "text-white"
+              }`
+            }
+            to="/about_us"
+          >
+            About Us
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `py-[13px] px-[20px] rounded-lg transition duration-300 ${
+                isActive ? "text-[#ffd900b1] font-bold" : "text-white"
+              }`
+            }
+            to="/contact_us"
+          >
+            Contact Us
+          </NavLink>
+        </div>
+        <div className="md:hidden block">
+          <MenuIcon sx={{ color: "white" }} />
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

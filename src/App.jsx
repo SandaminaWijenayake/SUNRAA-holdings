@@ -1,15 +1,12 @@
-import { useState } from "react";
-
 import "./App.css";
 import { Aboutus } from "./Components/Aboutus";
 import { Contactus } from "./Components/Contactus";
 import { Home } from "./Components/Home";
 import { Route, Routes } from "react-router";
 import Layout from "./Components/Layout";
+import { HelthBenifits } from "./Components/HelthBenifits";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Routes>
@@ -17,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact_us" element={<Contactus />} />
           <Route path="/about_us" element={<Aboutus />} />
+          <Route path="/Health_Benefits" element={<HelthBenifits />} />
         </Route>
       </Routes>
     </>
