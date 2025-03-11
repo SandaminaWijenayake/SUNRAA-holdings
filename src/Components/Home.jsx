@@ -16,12 +16,14 @@ export const Home = () => {
         {productData.map((product) => (
           <ProductCard
             key={product.id}
+            id={product.id}
             image={product.image}
             hoverImage={product.hoverImage}
             name={product.name}
           />
         ))}
       </ProductHomePage>
+
     </div>
   );
 };
