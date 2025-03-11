@@ -5,6 +5,7 @@ import { Home } from "./Components/Home";
 import { Route, Routes } from "react-router";
 import Layout from "./Components/Layout";
 import { HelthBenifits } from "./Components/HelthBenifits";
+import VeiwProduct from "./Components/Products/VeiwProduct";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/contact_us" element={<Contactus />} />
           <Route path="/about_us" element={<Aboutus />} />
           <Route path="/Health_Benefits" element={<HelthBenifits />} />
+          <Route path="/viewProduct/:id" element={<VeiwProduct />} />
         </Route>
       </Routes>
     </>
