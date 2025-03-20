@@ -3,6 +3,7 @@ import { TextField, Button, CircularProgress, Autocomplete } from "@mui/material
 import { LocationOn, Phone, Email, AccessTime } from "@mui/icons-material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import contactBG from '../assets/images/king_coco.jpg';
+import contactDetails from '../Constants/contactUs';
 
 const theme = createTheme({
   palette: {
@@ -11,7 +12,12 @@ const theme = createTheme({
     },
   },
 });
-
+const iconMap = {
+  LocationOn: <LocationOn className="text-orange-500 text-lg md:text-xl" />,
+  Phone: <Phone className="text-orange-500 text-lg md:text-xl" />,
+  Email: <Email className="text-orange-500 text-lg md:text-xl" />,
+  AccessTime: <AccessTime className="text-orange-500 text-lg md:text-xl" />
+};
 export const Contactus = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -89,34 +95,15 @@ export const Contactus = () => {
           </p>
 
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex items-center gap-3 md:gap-4">
-              <LocationOn className="text-orange-500 text-lg md:text-xl" />
-              <div>
-                <h3 className="font-bold text-sm md:text-base">Location</h3>
-                <p className="text-xs md:text-sm">No 137, 3rd cross road, Horagollawatta, Nittambuwa, Sri Lanka</p>
+            {contactDetails.map((item) => (
+              <div key={item.id} className="flex items-center gap-3 md:gap-4">
+                {iconMap[item.icon]}
+                <div>
+                  <h3 className="font-bold text-sm md:text-base">{item.title}</h3>
+                  <p className="text-xs md:text-sm">{item.value}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-3 md:gap-4">
-              <Phone className="text-orange-500 text-lg md:text-xl" />
-              <div>
-                <h3 className="font-bold text-sm md:text-base">Phone</h3>
-                <p className="text-xs md:text-sm">+94 77 727 6417<br />+94 74 073 0612</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 md:gap-4">
-              <Email className="text-orange-500 text-lg md:text-xl" />
-              <div>
-                <h3 className="font-bold text-sm md:text-base">Email</h3>
-                <p className="text-xs md:text-sm">info@ceyloneseexports.com</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 md:gap-4">
-              <AccessTime className="text-orange-500 text-lg md:text-xl" />
-              <div>
-                <h3 className="font-bold text-sm md:text-base">Work Hours</h3>
-                <p className="text-xs md:text-sm">Mon - Sun : 09:00 - 18:00</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
