@@ -10,6 +10,7 @@ export default {
         robotoSlab: ["Roboto Slab", "serif"],
         karla: ["Karla", "sans-serif"],
         lora: ["Lora", "serif"],
+        allura: ["Allura", "cursive"],
       },
       colors: {
         lightOrange: "#E98C81",

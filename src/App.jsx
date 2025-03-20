@@ -1,5 +1,5 @@
 import "./App.css";
-import { Aboutus } from "./Components/Aboutus";
+import { Aboutus } from "./Components/aboutUs/Aboutus.jsx";
 import { Contactus } from "./Components/Contactus";
 import { Home } from "./Components/Home";
 import { Route, Routes } from "react-router";

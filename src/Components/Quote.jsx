@@ -2,7 +2,7 @@ import React from "react";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 export const Quote = () => {
   return (
-    <div className="lg:w-[750px] w-8/12   m-auto py-[40px]">
+    <div className="lg:w-[750px] w-8/12   m-auto pb-[140px]">
       <div>
         <div className="-translate-x-28 translate-y-10">
           <FormatQuoteIcon

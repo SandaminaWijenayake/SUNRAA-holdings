@@ -5,6 +5,9 @@ import { Quote } from "./Quote";
 import ProductHomePage from "./Products/ProductHomePage";
 import ProductCard from "./Products/ProductCard";
 import productData from "../Constants/productData";
+import { SecondSection } from "./SecondSection";
+import { ProductDescription } from "./ProductDescription";
+import HomeImage from "./HomeImage";
 
 export const Home = () => {
   return (
@@ -12,6 +15,7 @@ export const Home = () => {
       <Hero />
       <IntroCards />
       <Quote />
+      <SecondSection />
       <ProductHomePage>
         {productData.map((product) => (
           <ProductCard
@@ -23,7 +27,8 @@ export const Home = () => {
           />
         ))}
       </ProductHomePage>
-
+      <ProductDescription />
+      <HomeImage />
     </div>
   );
 };
