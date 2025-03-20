@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { TextField, Button, MenuItem } from "@mui/material";
+import { useEffect, useState } from "react";
+import { TextField, Button, CircularProgress, Autocomplete } from "@mui/material";
 import { LocationOn, Phone, Email, AccessTime } from "@mui/icons-material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import contactBG from '../assets/images/king_coco.jpg';
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#f97316", // Orange color
+      main: "#f97316",
     },
   },
 });
@@ -21,6 +22,30 @@ export const Contactus = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [countries, setCountries] = useState([]);
+  const [loadingCountries, setLoadingCountries] = useState(false);
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      setLoadingCountries(true);
+      try {
+        const response = await fetch("https://restcountries.com/v3.1/all");
+        const data = await response.json();
+        const countryList = data.map((country) => ({
+          name: country.name.common,
+          dialCode: country.idd.root ? `${country.idd.root}${country.idd.suffixes ? country.idd.suffixes[0] : ''}` : '',
+          flag: country.flags && country.flags.png ? country.flags.png : "",
+        })).filter(c => c.dialCode !== '');
+        setCountries(countryList);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      } finally {
+        setLoadingCountries(false);
+      }
+    };
+
+    fetchCountries();
+  }, []);
 
   const validateForm = () => {
     let newErrors = {};
@@ -97,45 +122,61 @@ export const Contactus = () => {
 
         {/* Right Section - Form */}
         <div className="w-full lg:w-1/2 bg-white p-6 md:p-8 shadow-lg rounded-lg">
-          {/* <form className="space-y-4">
-            <TextField fullWidth label="Name" required variant="outlined" size="small" color="primary" />
-            <TextField fullWidth label="Email" required variant="outlined" size="small" color="primary" />
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <TextField select label="Country Code" className="md:w-1/3" size="small" color="primary">
-                <MenuItem value={"+94"}>🇱🇰 +94</MenuItem>
-              </TextField>
-              <TextField fullWidth label="Phone" required variant="outlined" size="small" color="primary" />
-            </div>
-
-            <TextField
-              fullWidth
-              label="Message"
-              multiline
-              rows={4}
-              variant="outlined"
-              size="small"
-              color="primary"
-            />
-
-            <Button
-              variant="contained"
-              fullWidth
-              color="primary"
-              className="text-white py-2 text-sm md:text-base"
-            >
-              Send Message
-            </Button>
-          </form> */}
           <form className="space-y-4" onSubmit={handleSubmit}>
             <TextField fullWidth label="Name" required variant="outlined" size="small" name="name" value={formData.name} onChange={handleChange} error={!!errors.name} helperText={errors.name} />
             <TextField fullWidth label="Email" required variant="outlined" size="small" name="email" value={formData.email} onChange={handleChange} error={!!errors.email} helperText={errors.email} />
 
-            <div className="flex flex-col md:flex-row gap-4">
-              <TextField select label="Country Code" className="md:w-1/3" size="small" name="countryCode" value={formData.countryCode} onChange={handleChange}>
-                <MenuItem value={"+94"}>🇱🇰 +94</MenuItem>
-              </TextField>
-              <TextField fullWidth label="Phone" required variant="outlined" size="small" name="phone" value={formData.phone} onChange={handleChange} error={!!errors.phone} helperText={errors.phone} />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="w-full sm:w-2/5">
+                <Autocomplete
+                  options={countries}
+                  loading={loadingCountries}
+                  getOptionLabel={(option) => `${option.name} (${option.dialCode})`}
+                  value={countries.find(c => c.dialCode === formData.countryCode) || null}
+                  onChange={(event, newValue) => {
+                    if (newValue) {
+                      setFormData({ ...formData, countryCode: newValue.dialCode });
+                    }
+                  }}
+                  renderOption={(props, option) => (
+                    <li {...props} className="flex items-center gap-2">
+                      <img src={option.flag} alt="" className="w-5 h-4" />
+                      {option.name} ({option.dialCode})
+                    </li>
+                  )}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Country Code"
+                      size="small"
+                      InputProps={{
+                        ...params.InputProps,
+                        endAdornment: (
+                          <>
+                            {loadingCountries ? <CircularProgress color="inherit" size={16} /> : null}
+                            {params.InputProps.endAdornment}
+                          </>
+                        )
+                      }}
+                    />
+                  )}
+                  isOptionEqualToValue={(option, value) => option.dialCode === value.dialCode}
+                />
+              </div>
+              <div className="w-full sm:w-3/5">
+                <TextField
+                  fullWidth
+                  label="Phone"
+                  required
+                  variant="outlined"
+                  size="small"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  error={!!errors.phone}
+                  helperText={errors.phone}
+                />
+              </div>
             </div>
 
             <TextField fullWidth label="Message" multiline rows={4} variant="outlined" size="small" name="message" value={formData.message} onChange={handleChange} error={!!errors.message} helperText={errors.message} />
@@ -151,9 +192,6 @@ export const Contactus = () => {
           </form>
         </div>
       </div>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 };
-
-
-
