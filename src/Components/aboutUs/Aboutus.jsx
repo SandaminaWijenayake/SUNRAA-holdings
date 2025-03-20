@@ -1,5 +1,5 @@
 import React from "react";
-import { AboutUsHero } from "./aboutUsHero";
+import { AboutUsHero } from "./AboutUsHero";
 import { MissonVision } from "./MissonVision";
 import { WhoweAre } from "./WhoweAre";
 
