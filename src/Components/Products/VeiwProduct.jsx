@@ -31,7 +31,7 @@ const ViewProduct = () => {
       >
         <div className="absolute inset-0 bg-black opacity-80"></div>
         <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-white relative">
-          View Product Information
+          Product
         </h2>
       </div>
       <div className="w-full bg-black flex justify-center py-[5vh]">
