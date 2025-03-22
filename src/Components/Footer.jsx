@@ -72,7 +72,7 @@ const Footer = () => {
             </h1>
             <p className=" ">
               <LocalPhoneIcon sx={{ marginRight: "15px", color: "#FF7800" }} />
-              +94 77 902 7052
+              +94 70 767 6707
             </p>
             <p className="">
               <EmailIcon sx={{ marginRight: "15px", color: "#FF7800" }} />
@@ -81,7 +81,7 @@ const Footer = () => {
             <p className="w-full flex items-start ">
               <TelegramIcon sx={{ marginRight: "15px", color: "#FF7800" }} />
               <span className="inline-block w-full">
-                268/2, Jayasuriya Building, Alutgama, Sri Lanka
+                237/B Owitigama Meegoda.
               </span>
             </p>
           </div>
@@ -97,7 +97,7 @@ const Footer = () => {
 
           <div className=" py-5 text-sm ">
             <p className="hover:text-[#01b3a7] cursor-pointer">
-              Developed by Prism{" "}
+              Developed by Prism Labs
             </p>
           </div>
         </div>

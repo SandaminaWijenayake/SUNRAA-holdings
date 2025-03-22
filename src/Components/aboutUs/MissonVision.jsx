@@ -9,7 +9,7 @@ export const MissonVision = () => {
       <div className="md:flex gap-3 md:pt-[100px] md:pb-[160px] pt-[40px] xl:w-[1140px] m-auto">
         <div className="grid gap-3 ">
           <div className="font-karla text-center text-[18px] text-orange-500 text-lg">
-            <span class="elementor-heading-title elementor-size-default">
+            <span className="elementor-heading-title elementor-size-default">
               Vision
             </span>{" "}
           </div>
@@ -20,7 +20,7 @@ export const MissonVision = () => {
           </div>
         </div>
         <div className="grid gap-3">
-          <div className="font-karla text-center text-orange-500 text-lg">
+          <div className="font-karla text-center pt-2 md:pt-0 text-orange-500 text-lg">
             Mission
           </div>
           <div className="border-x-[1px] border-orange-500 h-[20px] w-0 m-auto "></div>

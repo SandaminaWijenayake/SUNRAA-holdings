@@ -21,7 +21,7 @@ export const WhoweAre = () => {
         </p>
       </div>
       <div className="xl:w-[1290px] w-full px-3 lg:px-0 h-[421px] md:h-[505px] lg:h-[705px]  m-auto  items-center flex">
-        <div className="lg:w-[580px] w-full m-auto h-[421px] md:h-[505px] gap-5 flex">
+        <div className="lg:w-[580px] w-full m-auto h-[421px] md:h-[505px] gap-2 flex">
           <div className="xl:w-[318px] w-2/3 lg:w-[289px]">
             <img
               src={image1}
@@ -41,11 +41,11 @@ export const WhoweAre = () => {
           <p className="font-allura text-[40px] text-[#FF3C14] leading-3  font-bold mb-5">
             Who we are?
           </p>
-          <h1 className="font-lora text-[40px] lg:text-[48px] font-medium mb-5 leading-[50px]">
-            <h2 class="elementor-heading-title elementor-size-default">
-              Pioneering Ceylon’s Premium Exports
-            </h2>{" "}
-          </h1>
+          <div className="font-lora text-[40px] lg:text-[48px] font-medium mb-5 leading-[50px]">
+            <h1 className="elementor-heading-title elementor-size-default">
+              Pioneering Ceylon's Premium Exports
+            </h1>{" "}
+          </div>
           <p className="font-karla text-base mb-5">
             Ceylonese Exports, based in Nittambuwa, Sri Lanka, specializes in
             exporting fresh King Coconuts with the unique Ceylon taste. Our
