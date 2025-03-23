@@ -3,7 +3,7 @@ import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 export const ProductDescription = () => {
   return (
-    <div className="max-w-[1290px] md:h-[840px]  m-auto py-20  px-7">
+    <div className="max-w-[1290px]  m-auto py-20  px-7">
       <div className="text-[40px] font-allura text-center    text-[#FF3C14] font-bold">
         Product Description
       </div>

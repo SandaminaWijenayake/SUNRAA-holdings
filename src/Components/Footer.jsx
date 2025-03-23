@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div className="bg-black h-full pt-10  text-white font-karla text-base">
       <div className="md:flex w-11/12 lg:w-9/12 m-auto  py-16">
-        <div className="w-1/3">
+        <div className=" md:w-1/3">
           <h1>
             <img className="w-16" src={logo} alt="" />
           </h1>
@@ -91,7 +91,7 @@ const Footer = () => {
         <div className="w-8/12 m-auto py-5 text-xs font-medium text-[#9b9b9b] justify-between flex">
           <div className="">
             <p className=" text-sm w-11/12 m-auto py-5 ">
-              © 2024 Ceylonese Exports (Pvt) Ltd. All Rights Reserved.
+              © SUNRAA holdings (Pvt) Ltd. All Rights Reserved.
             </p>
           </div>
 
