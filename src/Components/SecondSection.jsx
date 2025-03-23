@@ -7,11 +7,15 @@ export const SecondSection = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="w-full  flex mb-[100px] items-center bg-[linear-gradient(to_right,#000000_40%,#FFFFFF_40%)]">
-        <div className="xl:w-[1290px] w-full  h-[705px]  m-auto  items-center flex">
-          <div className="lg:w-[580px] w-11/12 m-auto h-[505px] gap-5 flex">
+      <div className="w-full  flex mb-[100px] items-center md:bg-[linear-gradient(to_right,#000000_40%,#FFFFFF_40%)]">
+        <div className="xl:w-[1290px] w-full   md:h-[705px]  m-auto  items-center flex">
+          <div className="lg:w-[580px] w-11/12 m-auto h-[421px] md:h-[505px] gap-3 md:gap-5 flex">
             <div className="lg:w-[221px]">
-              <img src={image1} className="object-cover h-full" alt="" />
+              <img
+                src={image1}
+                className="object-cover object-left h-full"
+                alt=""
+              />
             </div>
             <div className="xl:w-[318px] lg:w-[289px]">
               <img src={image2} className="object-cover h-full" alt="" />

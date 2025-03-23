@@ -3,15 +3,15 @@ import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 export const ProductDescription = () => {
   return (
-    <div className="max-w-[1290px]  m-auto py-20  px-7">
+    <div className="max-w-[1290px]  m-auto py-20  px-2">
       <div className="text-[40px] font-allura text-center    text-[#FF3C14] font-bold">
         Product Description
       </div>
-      <h1 className="font-lora text-5xl text-center font-semibold">
+      <h1 className="font-lora md:text-5xl text-3xl text-center font-semibold">
         Discover the Essence of Pure Refreshment
       </h1>
       <div className="grid md:grid-cols-2 mt-[80px] gap-5 ">
-        <div className="flex md:max-w-[510px]">
+        <div className="md:flex md:max-w-[510px]">
           <div className="min-w-[89px]">
             <WorkspacePremiumIcon
               sx={{
@@ -22,7 +22,7 @@ export const ProductDescription = () => {
             />
           </div>
           <div className="">
-            <h1 className="text-[27px] h-[54px] flex items-center my-2 font-robotoSlab">
+            <h1 className="text-[26px] h-[54px] flex items-center  my-2 font-robotoSlab">
               Freshness Guaranteed
             </h1>
             <div className="md:max-w-[421px] text-base font-karla text-justify">
@@ -34,7 +34,7 @@ export const ProductDescription = () => {
             </div>
           </div>
         </div>
-        <div className="flex md:max-w-[510px] md:mt-[76px]">
+        <div className="md:flex md:max-w-[510px] md:mt-[76px]">
           <div className="min-w-[89px]">
             <WorkspacePremiumIcon
               sx={{
@@ -45,7 +45,7 @@ export const ProductDescription = () => {
             />
           </div>
           <div className="">
-            <h1 className="text-[27px] h-[54px] flex items-center my-2 font-robotoSlab ">
+            <h1 className="text-[26px] h-[54px] flex items-center my-2 font-robotoSlab ">
               Tropical Flavor
             </h1>
             <div className="md:max-w-[421px] text-base font-karla text-justify">
@@ -58,7 +58,7 @@ export const ProductDescription = () => {
             </div>
           </div>
         </div>
-        <div className="flex md:max-w-[510px]">
+        <div className="md:flex md:max-w-[510px]">
           <div className="min-w-[89px]">
             <WorkspacePremiumIcon
               sx={{
@@ -69,7 +69,7 @@ export const ProductDescription = () => {
             />
           </div>
           <div className="">
-            <h1 className="text-[27px] h-[54px] flex items-center my-2 font-robotoSlab">
+            <h1 className="text-[26px] h-[54px] flex items-center my-2 font-robotoSlab">
               Optimal Hydration
             </h1>
             <div className="md:max-w-[421px] text-base font-karla text-justify">
@@ -82,7 +82,7 @@ export const ProductDescription = () => {
             </div>
           </div>
         </div>
-        <div className="flex md:max-w-[510px] md:mt-[76px]">
+        <div className="md:flex md:max-w-[510px] md:mt-[76px]">
           <div className="min-w-[89px]">
             <WorkspacePremiumIcon
               sx={{
@@ -93,7 +93,7 @@ export const ProductDescription = () => {
             />
           </div>
           <div className="">
-            <h1 className="text-[27px] h-[54px] flex items-center my-2 font-robotoSlab">
+            <h1 className="text-[26px] h-[54px] flex items-center my-2 font-robotoSlab">
               Quality Assurance
             </h1>
             <div className="md:max-w-[421px] text-base font-karla text-justify">

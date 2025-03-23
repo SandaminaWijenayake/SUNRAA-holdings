@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import contactDetails from "../Constants/contactUs";
 
 const onHover = {
   ":hover": { color: "#FF9A00" },
@@ -17,9 +18,15 @@ const Footer = () => {
     <div className="bg-black h-full pt-10  text-white font-karla text-base">
       <div className="md:flex w-11/12 lg:w-9/12 m-auto  py-16">
         <div className=" md:w-1/3">
-          <h1>
-            <img className="w-16" src={logo} alt="" />
-          </h1>
+          <div className="font-bold w-[88px] text-white flex items-center gap-3">
+            <img src={logo} alt="Logo" className="w-[60px]" />
+            <span className="text-xl flex flex-col leading-none w-full">
+              SUNRAA
+              <span className="text-[17px] w-full font-light text-center">
+                HOLDINGS
+              </span>
+            </span>
+          </div>
           <p className="pt-2 text-base">
             Savor Sri Lanka's finest with Fresh King Coconuts from Ceylonese
             Exports Pvt Ltd. Experience premium flavors, sustainably sourced.
@@ -49,10 +56,10 @@ const Footer = () => {
                 <span className="w-2.5 h-2.5 bg-[#FF7800] rounded-full mr-2"></span>
                 <Link to="/">Home</Link>
               </li>
-              <li className="flex items-center hover:text-[#FF9A00]">
+              {/* <li className="flex items-center hover:text-[#FF9A00]">
                 <span className="w-2.5 h-2.5 bg-[#FF7800] rounded-full mr-2"></span>
                 <Link to="/Health_Benefits">Health Benefits</Link>
-              </li>
+              </li> */}
               <li className="flex items-center hover:text-[#FF9A00]">
                 <span className="w-2.5 h-2.5 bg-[#FF7800] rounded-full mr-2"></span>
                 <Link to="/about_us">About us</Link>
@@ -70,20 +77,17 @@ const Footer = () => {
             <h1 className="text-[22px] font-semibold text-left  mb-8">
               Get in Touch With Us
             </h1>
-            <p className=" ">
-              <LocalPhoneIcon sx={{ marginRight: "15px", color: "#FF7800" }} />
-              +94 70 767 6707
-            </p>
-            <p className="">
-              <EmailIcon sx={{ marginRight: "15px", color: "#FF7800" }} />
-              Geniuslankatours01@gmail.com
-            </p>
-            <p className="w-full flex items-start ">
-              <TelegramIcon sx={{ marginRight: "15px", color: "#FF7800" }} />
-              <span className="inline-block w-full">
-                237/B Owitigama Meegoda.
-              </span>
-            </p>
+            <div className="">
+              {contactDetails.map(({ id, title, value, icon: Icon }) => (
+                <div key={id} className="flex items-center gap-3">
+                  <Icon className="text-[#FF7800]" />{" "}
+                  <div>
+                    {/* <h4 className="font-bold">{title}</h4> */}
+                    <p>{value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
