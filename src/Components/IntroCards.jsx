@@ -2,12 +2,24 @@ import React from "react";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import PublicIcon from "@mui/icons-material/Public";
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export const IntroCards = () => {
   return (
     <>
-      <div className="block gap-6 lg:flex justify-center z-30 lg:-translate-y-10 ">
-        <div className="xl:w-[385px] xl:h-[148px] lg:h-[200px] lg:w-[300px] shadow-[0px_10px_20px_rgba(0,0,0,0.5)]">
+      <div className="block gap-6 lg:flex justify-center z-30 lg:-translate-y-10">
+        <motion.div
+          className="xl:w-[385px] xl:h-[148px] lg:h-[200px] lg:w-[300px] shadow-[0px_10px_20px_rgba(0,0,0,0.5)]"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex p-[25px] bg-white">
             <div className="min-w-12">
               <LocalShippingIcon fontSize="large" sx={{ color: "#F69A02" }} />
@@ -22,8 +34,15 @@ export const IntroCards = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="xl:w-[385px] xl:h-[148px] lg:h-[200px] lg:w-[300px] shadow-[0px_10px_20px_rgba(0,0,0,0.5)]">
+        </motion.div>
+
+        <motion.div
+          className="xl:w-[385px] xl:h-[148px] lg:h-[200px] lg:w-[300px] shadow-[0px_10px_20px_rgba(0,0,0,0.5)]"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex p-[25px] bg-white">
             <div className="min-w-12">
               <CreditScoreIcon fontSize="large" sx={{ color: "#F69A02" }} />
@@ -38,8 +57,15 @@ export const IntroCards = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="xl:w-[385px] xl:h-[148px] lg:h-[200px] lg:w-[300px] shadow-[0px_10px_20px_rgba(0,0,0,0.5)]">
+        </motion.div>
+
+        <motion.div
+          className="xl:w-[385px] xl:h-[148px] lg:h-[200px] lg:w-[300px] shadow-[0px_10px_20px_rgba(0,0,0,0.5)]"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="flex p-[25px] bg-white">
             <div className="min-w-12">
               <PublicIcon fontSize="large" sx={{ color: "#F69A02" }} />
@@ -54,7 +80,7 @@ export const IntroCards = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
