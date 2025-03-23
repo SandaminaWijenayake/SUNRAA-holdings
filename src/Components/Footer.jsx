@@ -92,16 +92,16 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full bg-black">
-        <div className="w-8/12 m-auto py-5 text-xs font-medium text-[#9b9b9b] justify-between flex">
+        <div className="w-11/12 lg:w-9/12 m-auto py-5 text-xs font-medium text-[#9b9b9b] justify-between flex">
           <div className="">
-            <p className=" text-sm w-11/12 m-auto py-5 ">
+            <p className=" text-sm  m-auto py-5 ">
               © SUNRAA holdings (Pvt) Ltd. All Rights Reserved.
             </p>
           </div>
 
           <div className=" py-5 text-sm ">
             <p className="hover:text-[#01b3a7] cursor-pointer">
-              Developed by Prism Labs
+              Developed by Prisma Labs
             </p>
           </div>
         </div>
