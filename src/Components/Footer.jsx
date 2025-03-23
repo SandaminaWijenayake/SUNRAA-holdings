@@ -32,7 +32,7 @@ const Footer = () => {
             Exports Pvt Ltd. Experience premium flavors, sustainably sourced.
             Explore now !
           </p>
-          <div className="w-1/3 hidden sm:block">
+          <div className="w-9/12     sm:block">
             <div className="flex justify-between my-5  ">
               <Link>
                 <FacebookOutlinedIcon fontSize="medium" sx={onHover} />
@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full bg-black">
-        <div className="w-11/12 lg:w-9/12 m-auto py-5 text-xs font-medium text-[#9b9b9b] justify-between flex">
+        <div className="w-11/12 gap-7 lg:w-9/12 m-auto py-5 text-xs font-medium text-[#9b9b9b] justify-between flex">
           <div className="">
             <p className=" text-sm  m-auto py-5 ">
               © SUNRAA holdings (Pvt) Ltd. All Rights Reserved.
