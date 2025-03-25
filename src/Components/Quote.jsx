@@ -28,7 +28,7 @@ export const Quote = () => {
   const typedQuote = useTypewriter(quote, 50);
   return (
     <motion.div
-      className="lg:w-[750px] w-8/12 m-auto pb-[140px]"
+      className="lg:w-[750px]  w-8/12 m-auto pb-[140px]"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

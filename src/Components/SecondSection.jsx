@@ -8,19 +8,19 @@ export const SecondSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <div className="w-full flex mb-[100px] items-center md:bg-[linear-gradient(to_right,#000000_40%,#FFFFFF_40%)]">
-        <div className="xl:w-[1290px] w-full md:h-[705px] m-auto items-center flex">
+    <div className="overflow-hidden">
+      <div className="w-full flex mb-[100px] items-center md:bg-[linear-gradient(to_right,#000000_40%,#FFFFFF_40%)] overflow-hidden">
+        <div className="xl:w-[1290px] w-full md:h-[705px] m-auto items-center flex overflow-hidden">
           <motion.div
-            className="lg:w-[580px] w-11/12 m-auto h-[421px] md:h-[505px] gap-3 md:gap-5 flex"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="lg:w-[580px] w-11/12 m-auto h-[421px] md:h-[505px] gap-3 md:gap-5 flex overflow-hidden"
+            initial={{ opacity: 0.1, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.div
-              className="lg:w-[221px]"
-              initial={{ opacity: 0, x: -50 }}
+              className="lg:w-[221px] overflow-hidden"
+              initial={{ opacity: 0.1, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
@@ -32,8 +32,8 @@ export const SecondSection = () => {
               />
             </motion.div>
             <motion.div
-              className="xl:w-[318px] lg:w-[289px]"
-              initial={{ opacity: 0, x: 50 }}
+              className="xl:w-[318px] lg:w-[289px] overflow-hidden"
+              initial={{ opacity: 0.1, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -43,8 +43,8 @@ export const SecondSection = () => {
           </motion.div>
 
           <motion.div
-            className="w-[709px] xl:pl-[70px] pl-[40px] pr-[50px] hidden lg:block"
-            initial={{ opacity: 0, x: 50 }}
+            className="w-[709px] xl:pl-[70px] pl-[40px] pr-[50px] hidden lg:block overflow-hidden"
+            initial={{ opacity: 0.1, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -69,7 +69,7 @@ export const SecondSection = () => {
             <motion.button
               onClick={() => navigate("/Health_Benefits")}
               className="py-5 px-8 bg-[#FF9A00] text-white font-extralight font-karla text-lg"
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.8, opacity: 0.1 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -82,8 +82,8 @@ export const SecondSection = () => {
 
       {/* Mobile View */}
       <motion.div
-        className="w-11/12 m-auto pb-[80px] lg:hidden block"
-        initial={{ opacity: 0, y: 50 }}
+        className="w-11/12 m-auto pb-[80px] lg:hidden block overflow-hidden"
+        initial={{ opacity: 0.1, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -110,7 +110,7 @@ export const SecondSection = () => {
         <motion.button
           onClick={() => navigate("/Health_Benefits")}
           className="py-5 px-8 bg-[#FF9A00] text-white font-extralight font-karla text-lg"
-          initial={{ scale: 0.8, opacity: 0 }}
+          initial={{ scale: 0.8, opacity: 0.1 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}

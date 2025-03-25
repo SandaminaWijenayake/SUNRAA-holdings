@@ -60,36 +60,39 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="md:w-1/3 m-auto text-base mt-9 leading-9 text-center md:mt-0">
-          <motion.h1
-            className="text-[22px] font-semibold text-left md:text-center mb-8"
-            initial="hidden"
-            whileInView="visible"
-            variants={textVariants}
-            viewport={{ once: true }}
-          >
-            Quick Links
-          </motion.h1>
-          <ul className="ml-[20px] md:flex justify-center">
-            {["Home", "About us", "Contact us"].map((link, index) => (
-              <motion.li
-                key={index}
-                className="flex items-center hover:text-[#FF9A00]"
-                initial="hidden"
-                whileInView="visible"
-                variants={textVariants}
-                viewport={{ once: true }}
-              >
+        <motion.div
+          className="md:w-1/3 m-auto text-base mt-9 leading-9 text-center md:mt-0"
+          initial="hidden"
+          whileInView="visible"
+          variants={textVariants}
+          viewport={{ once: true }}
+        >
+          <h1 className="text-[22px] font-semibold text-left md:text-center mb-8">
+            Quick links
+          </h1>
+          <div className="ml-[20px] md:flex justify-center">
+            <ul className=" md:grid-cols-1 grid-cols-2   gap-x-8 gap-y-2">
+              <li className="flex items-center  hover:text-[#FF9A00]">
                 <span className="w-2.5 h-2.5 bg-[#FF7800] rounded-full mr-2"></span>
-                <Link to={`/${link.replace(" ", "_").toLowerCase()}`}>
-                  {link}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
+                <Link to="/">Home</Link>
+              </li>
+              {/* <li className="flex items-center hover:text-[#FF9A00]">
+                 <span className="w-2.5 h-2.5 bg-[#FF7800] rounded-full mr-2"></span>
+                 <Link to="/Health_Benefits">Health Benefits</Link>
+               </li> */}
+              <li className="flex items-center hover:text-[#FF9A00]">
+                <span className="w-2.5 h-2.5 bg-[#FF7800] rounded-full mr-2"></span>
+                <Link to="/about_us">About us</Link>
+              </li>
 
-        {/* Contact Details */}
+              <li className="flex items-center hover:text-[#FF9A00]">
+                <span className="w-2.5 h-2.5 bg-[#FF7800] rounded-full mr-2"></span>
+                <Link to="/contact_us">Contact us</Link>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
+
         <div className="w-full sm:flex md:w-1/3 min-w-[267px] mt-9 md:mt-0">
           <div className="sm:w-full text-base leading-9 text-left">
             <motion.h1
