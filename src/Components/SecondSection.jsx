@@ -67,7 +67,7 @@ export const SecondSection = () => {
               <li>Ayurvedic Tradition</li>
             </ul>
             <motion.button
-              onClick={() => navigate("/Health_Benefits")}
+              onClick={() => navigate("/about_us")}
               className="py-5 px-8 bg-[#FF9A00] text-white font-extralight font-karla text-lg"
               initial={{ scale: 0.8, opacity: 0.1 }}
               whileInView={{ scale: 1, opacity: 1 }}
