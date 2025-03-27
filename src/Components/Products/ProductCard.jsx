@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -63,6 +64,13 @@ const ProductCard = ({ id, image, hoverImage, name }) => {
       </div>
     </div>
   );
+};
+
+ProductCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  hoverImage: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default ProductCard;
