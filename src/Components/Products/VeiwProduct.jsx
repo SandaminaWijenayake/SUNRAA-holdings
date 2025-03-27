@@ -2,13 +2,19 @@ import { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 import contactBG from "../../assets/images/king_coco.jpg";
 import productData from "../../Constants/productData";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 useParams;
 const ViewProduct = () => {
   const { id } = useParams(); // Get product ID from URL
   const productInfo = productData.find(
     (product) => product.id === parseInt(id)
   );
+  const ProductImages = productInfo.productImages;
+  const [mainImage, setMainImage] = useState(ProductImages[0]);
+
+  useEffect(() => {
+    setMainImage(ProductImages[0]);
+  }, [ProductImages]);
 
   if (!productInfo) {
     return (
@@ -16,12 +22,6 @@ const ViewProduct = () => {
     );
   }
 
-  const ProductImages = productInfo.productImages;
-  const [mainImage, setMainImage] = useState(ProductImages[0]);
-
-  useEffect(() => {
-    setMainImage(ProductImages[0]);
-  }, [ProductImages]);
 
   return (
     <>
@@ -61,6 +61,9 @@ const ViewProduct = () => {
               {productInfo.productTitle}
             </h1>
             <p className="text-gray-700 mb-6">{productInfo.productDesc}</p>
+            <Link to="/contact_us"  className="z-10 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2 shadow-md hover:from-orange-600 hover:to-orange-700 transition duration-300">
+              Request quotation
+            </Link>
           </div>
         </div>
       </div>
