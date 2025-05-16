@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import image1 from "../assets/images/pexels-samer-daboul-1652001.jpg";
+import image1 from "../assets/images/pexels-samer-daboul-1652001.webp";
 import { motion } from "framer-motion";
 
 export const Hero = () => {

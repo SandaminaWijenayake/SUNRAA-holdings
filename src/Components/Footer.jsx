@@ -46,13 +46,13 @@ const Footer = () => {
           </motion.p>
           <div className="w-1/2 sm:block">
             <div className="flex justify-between my-5">
-              <Link>
+              <Link to="#">
                 <FacebookOutlinedIcon fontSize="medium" />
               </Link>
-              <Link to="https://x.com/jagath_tou38334">
+              <Link to="#">
                 <TwitterIcon fontSize="medium" />
               </Link>
-              <Link to="https://www.instagram.com/geniuslankatours/">
+              <Link to="#">
                 <InstagramIcon fontSize="medium" />
               </Link>
             </div>
@@ -142,7 +142,7 @@ const Footer = () => {
             variants={textVariants}
             viewport={{ once: true }}
           >
-            Developed by Prisma Labs
+            {/* Developed by Prisma Labs */}
           </motion.p>
         </div>
       </div>

@@ -18,7 +18,7 @@ const contactDetails = [
   {
     id: 3,
     title: "Email",
-    value: "geniuslankatours01@gmail.com",
+    value: "email@gmail.com",
     icon: EmailIcon,
   },
   // {
